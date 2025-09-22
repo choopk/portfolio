@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Github, Linkedin, Mail, MapPin, Download, ExternalLink, Menu } from "lucide-react"
+import { MapPin, ExternalLink, Menu } from "lucide-react"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Home() {
   return (
@@ -54,12 +56,12 @@ export default function Home() {
             <div className="flex justify-center gap-4">
               <Button variant="ghost" size="icon" asChild>
                 <a href="https://github.com/choopk" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-                  <Github className="h-5 w-5" />
+                  <FaGithub className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <a href="https://www.linkedin.com/in/jian-cheng-choo-77699a280/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                  <Linkedin className="h-5 w-5" />
+                  <FaLinkedin className="h-5 w-5" />
                 </a>
               </Button>
             </div>
@@ -285,7 +287,7 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 flex items-center justify-center" style={{ background: '#764530' }}>
-                <img src="/Studenta_logo_wp-300x69.png.webp" alt="Studenta Logo" className="h-16 w-auto object-contain" />
+                <Image src="/Studenta_logo_wp-300x69.png.webp" alt="Studenta Logo" width={300} height={69} className="h-16 w-auto object-contain" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Studenta Migration</h3>
@@ -320,7 +322,7 @@ export default function Home() {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 flex items-center justify-center" style={{ background: '#205089' }}>
-                <img src="/sole-tm-logo@2x-300x122.png.webp" alt="SoleTM Logo" className="h-16 w-auto object-contain" />
+                <Image src="/sole-tm-logo@2x-300x122.png.webp" alt="SoleTM Logo" width={300} height={122} className="h-16 w-auto object-contain" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-3">SoleTM Rewrite</h3>
@@ -356,7 +358,7 @@ export default function Home() {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 flex items-center justify-center" style={{ background: '#72510e' }}>
-                <img src="/SoleCris_logo_wp-300x116.png.webp" alt="SoleCris Logo" className="h-16 w-auto object-contain" />
+                <Image src="/SoleCris_logo_wp-300x116.png.webp" alt="SoleCris Logo" width={300} height={116} className="h-16 w-auto object-contain" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-3">SoleCris React UI</h3>
@@ -392,7 +394,7 @@ export default function Home() {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Component Library Migration</h3>
                 <p className="text-muted-foreground mb-4">
-                  Led the modernization of the company's UI component library from Bootstrap + JavaScript to TypeScript + Tailwind CSS.
+                  Part of the team that modernized the company&apos;s UI component library from Bootstrap + JavaScript to TypeScript + Tailwind CSS.
                   Strategized migration approach, managed backlog, and ensured quality standards for new components.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -424,7 +426,7 @@ export default function Home() {
           <div className="max-w-md mx-auto">
             <Card className="p-6 text-center hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
-                <Linkedin className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <FaLinkedin className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">LinkedIn</h3>
                 <p className="text-muted-foreground">Connect with me professionally</p>
                 <Button className="mt-4" variant="outline" asChild>
