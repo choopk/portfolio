@@ -1,13 +1,17 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { MapPin, ExternalLink, Menu } from "lucide-react"
+import { MapPin, ExternalLink, Menu, X } from "lucide-react"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import Link from "next/link"
 import Image from "next/image"
+import { useState } from "react"
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
       <nav className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-slate-950/95 dark:supports-[backdrop-filter]:bg-slate-950/60">
@@ -23,10 +27,45 @@ export default function Home() {
             <a href="#contact" className="transition-colors hover:text-foreground/80 text-foreground/60 hover:text-blue-600">Contact</a>
           </nav>
 
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-5 w-5" />
+          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
+
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t bg-white/95 backdrop-blur dark:bg-slate-950/95">
+            <div className="px-4 py-2 space-y-1">
+              <a 
+                href="#skills" 
+                className="block px-3 py-2 text-sm font-medium text-foreground/60 hover:text-blue-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Skills
+              </a>
+              <a 
+                href="#experience" 
+                className="block px-3 py-2 text-sm font-medium text-foreground/60 hover:text-blue-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Experience
+              </a>
+              <a 
+                href="#projects" 
+                className="block px-3 py-2 text-sm font-medium text-foreground/60 hover:text-blue-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Projects
+              </a>
+              <a 
+                href="#contact" 
+                className="block px-3 py-2 text-sm font-medium text-foreground/60 hover:text-blue-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
